@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieGrid from "../../components/MovieGrid";
 import Spinner from "../../components/Spinner";
 
-const index = () => {
+const Index = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -39,4 +39,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
