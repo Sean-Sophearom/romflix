@@ -6,9 +6,9 @@ const MovieGrid = ({ movies, title }) => {
     <>
       <h1 className="text-2xl font-semibold my-2">{title}</h1>
 
-      <div className="grid grid-cols-5 gap-y-6 gap-x-2">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-6 gap-x-2">
         {movies.map((m) => (
-          <div key={m.id} className="border border-gray-400 rounded-md overflow-hidden flex flex-col">
+          <div key={m.id} className="border border-gray-400 rounded-md overflow-hidden flex flex-col shadow-sm">
             <Link href={`/movies/${m.id}`} className="overflow-hidden cursor-pointer">
               <Image
                 className="hover:scale-110 transition-all"

@@ -38,19 +38,15 @@ const MovieDetail = () => {
 
   return (
     <>
-      <div className="container relative">
-        <Image
-          className="absolute w-full blur-[2px] brightness-[.3] z-[-1]"
-          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-          width="793"
-          height="446"
-          alt={movie.title}
-          priority={true}
-        />
-        <div className="flex text-white">
+      <div
+        style={{
+          background: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path}) center center / cover no-repeat`,
+        }}
+      >
+        <div className="flex flex-col md:flex-row text-white bg-black bg-opacity-60 px-2 py-2 md:py-0">
           <Image
             priority={true}
-            className="max-w-[315px] m-2 border border-white"
+            className="max-w-[200px] sm:max-w-[250px] md:max-w-[315px] m-2 border border-white object-contain mx-auto"
             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
             width="581"
             height="387"

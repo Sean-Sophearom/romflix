@@ -25,7 +25,7 @@ const Index = () => {
 
   return (
     <>
-      <MovieGrid movies={movies} />
+      <MovieGrid movies={movies} title="Popular Movies" />
       <div className="p-4 flex items-center justify-center">
         {loading ? (
           <Spinner />

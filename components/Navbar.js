@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="box flex items-center justify-between border-b border-gray-200">
       <Link href="/" className="text-lg font-medium">
-        Logo
+        Romflix
       </Link>
       <ul className="flex gap-8">
         <li className="hover:underline hover:text-gray-500">
