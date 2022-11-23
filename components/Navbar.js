@@ -6,9 +6,12 @@ const Navbar = () => {
       <Link href="/" className="text-lg font-medium">
         Romflix
       </Link>
-      <ul className="flex gap-8">
+      <ul className="flex gap-2 text-xs xs:text-sm xs:gap-6 sm:text-base sm:gap-8">
         <li className="hover:underline hover:text-gray-500">
           <Link href="/movies">movies</Link>
+        </li>
+        <li className="hover:underline hover:text-gray-500">
+          <Link href="/search">search</Link>
         </li>
         <li className="hover:underline hover:text-gray-500">
           <Link href="/about">about</Link>
