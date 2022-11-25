@@ -92,6 +92,12 @@ const MovieDetail = ({ movie, related, trailer }) => {
           <div className="box space-y-2">
             <h1 className="text-2xl font-bold py-4">{movie.title}</h1>
             <p>Overview: {movie.overview}</p>
+            <p>Release Date: {movie.release_date}</p>
+            <p>Budget: {movie.budget || "Unknown"} $</p>
+            <p>Revenue: {movie.revenue || "Unknown"} $</p>
+            <p>Rating: {movie.vote_average}</p>
+            <p>Votes: {movie.vote_count}</p>
+            <p>Status: {movie.status}</p>
 
             <div className="flex items-center gap-4 justify-center pt-4 pb-2">
               <button
