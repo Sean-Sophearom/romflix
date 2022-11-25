@@ -22,7 +22,7 @@ const Cart = () => {
     );
   return (
     <div>
-      <MovieGrid movies={cart} />
+      <MovieGrid movies={cart} title="Your cart" />
       <p className="border-t pt-2 pb-4 mt-8 border-gray-200 text-end font-semibold text-lg sm:text-xl">
         Your total is: {total.toFixed(2)} ${" "}
       </p>
