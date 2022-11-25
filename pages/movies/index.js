@@ -11,16 +11,12 @@ const Index = ({ query }) => {
 
   const getMovies = async (page, query) => {
     setLoading(true);
-    let res;
-    if (query) {
-      res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=0eb72e5a87c3896938cd899d9b93a334&query=${query}&page=${page}`
-      );
-    } else {
-      res = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0eb72e5a87c3896938cd899d9b93a334&page=${page}`
-      );
-    }
+    let res = await fetch(
+      query
+        ? `https://api.themoviedb.org/3/search/movie?api_key=0eb72e5a87c3896938cd899d9b93a334&query=${query}&page=${page}`
+        : `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=0eb72e5a87c3896938cd899d9b93a334&page=${page}`
+    );
+
     const data = await res.json();
     const results = data.results;
     if (results.length === 0) {
