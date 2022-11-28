@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <Snackbar isOpen={snackbar} close={() => setSnackbar(false)} />
+      {/* <Snackbar isOpen={snackbar} close={() => setSnackbar(false)} /> */}
       Welcome to our website.{" "}
       <Link href="/movies" className="underline">
         View movies
@@ -15,3 +15,14 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async (ctx) => {
+  fetch("https://icefilms.tv/ajax/premiumzi.php?embed=170335", { headers: { referer: "https://icefilms.tv" } })
+    .then((res) => res.text())
+    .then(console.log);
+  return {
+    props: {
+      data: null,
+    },
+  };
+};
