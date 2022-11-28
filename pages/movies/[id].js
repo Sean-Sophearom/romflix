@@ -1,20 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
-import { useRouter } from "next/router";
 import parse from "node-html-parser";
-import React, { useEffect, useState } from "react";
-import { Minus, Plus, Spinner } from "../../components/icons";
+import React, { useState } from "react";
+import { Minus, Plus } from "../../components/icons";
 import MovieGrid from "../../components/MovieGrid";
 import { useGlobalContext } from "../../lib/context";
 
 const MovieDetail = ({ movie, related, trailer }) => {
-  // const [movie, setMovie] = useState({});
-  // const [related, setRelated] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  // const router = useRouter();
-
-  console.log(related);
-
   const { getCount, addMovie, removeMovie } = useGlobalContext();
 
   const [count, setCount] = useState(getCount(movie.id));
@@ -30,52 +21,11 @@ const MovieDetail = ({ movie, related, trailer }) => {
     setCount(count - 1);
   };
 
-  // useEffect(() => {
-  //   setCount(getCount(movie.id));
-  // }, [setCount, getCount, movie]);
-
-  // const getMovie = async (id) => {
-  //   if (!id) return;
-  //   setLoading(true);
-  //   let thisMovie = fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0eb72e5a87c3896938cd899d9b93a334`);
-  //   let relatedMovies = fetch(
-  //     `https://api.themoviedb.org/3/movie/${id}/similar?api_key=0eb72e5a87c3896938cd899d9b93a334`
-  //   );
-  //   [thisMovie, relatedMovies] = await Promise.all([thisMovie, relatedMovies]);
-  //   [thisMovie, relatedMovies] = await Promise.all([thisMovie.json(), relatedMovies.json()]);
-
-  //   setMovie(thisMovie);
-  //   setRelated(relatedMovies.results);
-  //   setLoading(false);
-  // };
-
-  // useEffect(() => {
-  //   getMovie(router.query.id);
-  // }, [router.query.id]);
-
-  // useEffect(() => {
-  //   if (movie.title) document.title = movie.title;
-  // }, [movie]);
-
-  const head = (
-    <Head>
-      <title>{movie.title}</title>
-    </Head>
-  );
-
-  // if (loading)
-  //   return (
-  //     <>
-  //       {head}
-  //       <div className="flex justify-center">
-  //         <Spinner />
-  //       </div>
-  //     </>
-  //   );
-
   return (
     <>
-      {head}
+      <Head>
+        <title>{movie.title}</title>
+      </Head>
       <div
         style={{
           background: `url(https://image.tmdb.org/t/p/w500${movie.backdrop_path}) center center / cover no-repeat`,
