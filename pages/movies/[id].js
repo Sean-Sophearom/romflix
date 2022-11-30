@@ -61,7 +61,7 @@ const MovieDetail = ({ movie, related, trailer }) => {
       </div>
 
       <div className="bg-black mt-8 py-4">
-        <iframe src={trailer} frameBorder="0" allowFullScreen className="mx-auto w-4/5 aspect-video"></iframe>
+        <iframe src={trailer} frameborder="0" allowFullScreen className="mx-auto w-4/5 aspect-video"></iframe>
       </div>
 
       <div className="py-4">
