@@ -39,7 +39,13 @@ const Login = () => {
 
   const handleSuccess = (token) => {
     setToken(token);
-    router.replace("/cart");
+    router.push(
+      {
+        pathname: "/cart",
+        query: { loginSuccess: "login-success" },
+      },
+      "cart"
+    );
   };
 
   useEffect(() => {
