@@ -3,7 +3,7 @@ import parse from "node-html-parser";
 import React, { useState } from "react";
 import { Minus, Plus } from "../../components/icons";
 import MovieGrid from "../../components/MovieGrid";
-import { useGlobalContext } from "../../lib/context";
+import { useGlobalContext } from "../../lib/cartContext";
 
 const MovieDetail = ({ movie, related, trailer }) => {
   const { getCount, addMovie, removeMovie } = useGlobalContext();
@@ -61,7 +61,7 @@ const MovieDetail = ({ movie, related, trailer }) => {
       </div>
 
       <div className="bg-black mt-8 py-4">
-        <iframe src={trailer} frameborder="0" allowFullScreen className="mx-auto w-4/5 aspect-video"></iframe>
+        <iframe src={trailer} frameBorder="0" allowFullScreen className="mx-auto w-4/5 aspect-video"></iframe>
       </div>
 
       <div className="py-4">

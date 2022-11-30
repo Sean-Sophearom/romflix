@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useGlobalContext } from "../lib/context";
+import { useGlobalContext } from "../lib/cartContext";
 
 const Navbar = () => {
   const { cart } = useGlobalContext();

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { useGlobalContext } from "../lib/context";
+import { useGlobalContext } from "../lib/cartContext";
 import { Minus, Plus } from "./icons";
 
 const MovieCard = ({ m }) => {
